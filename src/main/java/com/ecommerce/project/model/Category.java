@@ -5,6 +5,8 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.*;
 
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "categories")
@@ -17,6 +19,9 @@ public class Category {
     @NotBlank(message = "Category Name Can't be Blank !!")
     @Size(min = 3, message = "Category name must contain at-least 5 characters")
     private String categoryName;
+
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    private List<Product> products;
 
 //    public Category(){
 //    }
@@ -41,4 +46,9 @@ public class Category {
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
     }
+
+    public List<Product> getProducts() { return products; }
+
+    public void setProducts(List<Product> products) { this.products = products; }
+
 }
