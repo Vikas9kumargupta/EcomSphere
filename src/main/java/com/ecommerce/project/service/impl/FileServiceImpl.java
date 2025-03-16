@@ -3,7 +3,6 @@ package com.ecommerce.project.service.impl;
 import com.ecommerce.project.service.FileService;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -31,7 +30,6 @@ public class FileServiceImpl implements FileService {
 
         // Upload to server and return file name.
         Files.copy(file.getInputStream(), Paths.get(filePath));
-
         return  fileName;
     }
 }

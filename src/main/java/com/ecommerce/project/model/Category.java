@@ -7,7 +7,6 @@ import lombok.*;
 
 import java.util.List;
 
-@NoArgsConstructor
 @AllArgsConstructor
 @Entity(name = "categories")
 public class Category {
@@ -23,6 +22,7 @@ public class Category {
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
     private List<Product> products;
 
+    public Category(){}
     public Long getCategoryId() { return categoryId; }
     public void setCategoryId(Long categoryId) { this.categoryId = categoryId; }
     public String getCategoryName() { return categoryName; }

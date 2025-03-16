@@ -14,7 +14,6 @@ import java.util.List;
 @Entity
 @Table(name="addresses")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 @ToString
 public class Address {
@@ -51,7 +50,7 @@ public class Address {
     @ManyToMany(mappedBy = "addresses")
     private List<User> users = new ArrayList<>();
 
-
+    public Address(){}
     public Long getAddressId() { return addressId;}
     public void setAddressId(Long addressId) { this.addressId = addressId; }
     public String getStreet() { return street; }

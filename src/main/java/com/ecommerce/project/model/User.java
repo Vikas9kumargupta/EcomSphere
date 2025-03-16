@@ -16,26 +16,28 @@ import java.util.Set;
 
 @Entity
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Long userId;
 
     @NotBlank
     @Size(max = 20)
+    @Column(name = "username")
     private String userName;
 
     @NotBlank
     @Email
     @Size(max=50)
+    @Column(name = "email")
     private String email;
 
     @NotBlank
-    @Size(max = 20)
+    @Size(max = 120)
+    @Column(name = "password")
     private String password;
 
     @ToString.Exclude
@@ -44,6 +46,13 @@ public class User {
             orphanRemoval = true)
     private Set<Product> products;
 
+    public User(String userName, String email, String password) {
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+    }
+
+    public User(){}
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name = "user_address",
@@ -58,11 +67,6 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    public User(String userName, String email, String password) {
-        this.userName = userName;
-        this.email = email;
-        this.password = password;
-    }
 
     public List<Address> getAddresses() { return addresses; }
     public void setAddresses(List<Address> addresses) { this.addresses = addresses; }

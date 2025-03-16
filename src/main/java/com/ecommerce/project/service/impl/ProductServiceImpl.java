@@ -6,8 +6,8 @@ import com.ecommerce.project.model.Category;
 import com.ecommerce.project.model.Product;
 import com.ecommerce.project.payload.ProductDTO;
 import com.ecommerce.project.payload.ProductResponse;
-import com.ecommerce.project.repository.CategoryRepository;
-import com.ecommerce.project.repository.ProductRepository;
+import com.ecommerce.project.repositories.CategoryRepository;
+import com.ecommerce.project.repositories.ProductRepository;
 import com.ecommerce.project.service.FileService;
 import com.ecommerce.project.service.ProductService;
 import org.modelmapper.ModelMapper;
@@ -110,7 +110,7 @@ public class ProductServiceImpl implements ProductService {
 
         List<Product> products = pageProducts.getContent();
         if(products.isEmpty()){
-            throw new APIException(category.getCategoryName() + ": Category does not have Any Product ");
+            throw new APIException(category.getCategoryName() + ": -Category does not have Any Product ");
         }
         List<ProductDTO> productDTOS = products.stream()
                 .map(product -> modelMapper.map(product, ProductDTO.class))

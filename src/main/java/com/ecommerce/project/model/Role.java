@@ -17,7 +17,7 @@ public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "role_id")
-    private Integer roleId;
+    private Long roleId;
 
     @ToString.Exclude
     @Enumerated(EnumType.STRING)
@@ -27,20 +27,17 @@ public class Role {
     public Role(AppRole roleName){
         this.roleName = roleName;
     }
-
+    public Role(){}
     public AppRole getRoleName() {
         return roleName;
     }
-
     public void setRoleName(AppRole roleName) {
         this.roleName = roleName;
     }
-
-    public Integer getRoleId() {
+    public Long getRoleId() {
         return roleId;
     }
-
-    public void setRoleId(Integer roleId) {
+    public void setRoleId(Long roleId) {
         this.roleId = roleId;
     }
 

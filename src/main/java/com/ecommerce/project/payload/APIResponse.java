@@ -29,4 +29,5 @@ public class APIResponse {
         this.message = message;
         this.status = status;
     }
+
 }
