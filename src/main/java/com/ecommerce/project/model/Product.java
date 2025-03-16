@@ -7,10 +7,13 @@ import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.ToString;
 
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "products")
+@ToString
 public class Product {
 
     @Id
@@ -33,30 +36,28 @@ public class Product {
     @JoinColumn(name = "category_id")
     private Category category;
 
-    public Long getProductId() {
-        return productId;
-    }
+    @ManyToOne
+    @JoinColumn(name = "seller_id")
+    private User user;
 
+    public User getUser() { return user; }
+    public void setUser(User user) { this.user = user;}
+    public Long getProductId() {return productId;}
     public void setProductId(Long productId) {
         this.productId = productId;
     }
-
     public String getProductName() {
         return productName;
     }
-
     public void setProductName(String productName) {
         this.productName = productName;
     }
-
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
-
     public Integer getQuantity() {
         return quantity;
     }
