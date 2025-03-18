@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Table(name = "roles")

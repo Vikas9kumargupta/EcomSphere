@@ -1,8 +1,5 @@
 package com.ecommerce.project.security.jwt;
 
-import java.security.Key;
-import java.util.Date;
-
 import com.ecommerce.project.security.services.UserDetailsImpl;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.*;
@@ -18,6 +15,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.util.WebUtils;
 
 import javax.crypto.SecretKey;
+import java.security.Key;
+import java.util.Date;
 
 @Component
 public class JwtUtils {
@@ -29,7 +28,7 @@ public class JwtUtils {
     @Value("${spring.app.jwtExpirationMs}")
     private int jwtExpirationMs;
 
-    @Value("${spring.ecom.app.jwtCookieName")
+    @Value("${spring.ecom.app.jwtCookieName}")
     private String jwtCookie;
 
     public String getJwtFromCookies(HttpServletRequest request){
