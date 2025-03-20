@@ -7,7 +7,7 @@ This project is a fully functional **E-Commerce platform** built with **Spring B
 
 ## ✨ Features
 ✅ **User Authentication & JWT-based Authorization** 🔐  
-✅ **Role-Based Access Control** (Admin, Customer) 🛂  
+✅ **Role-Based Access Control** (Admin, Customer, User) 🛂  
 ✅ **Product Catalog Management** 🛍️  
 ✅ **Shopping Cart & Order Processing** 🛒  
 ✅ **Secure Payment Gateway Integration** 💳  
@@ -38,7 +38,7 @@ Ensure you have the following installed before setting up the project:
 1️⃣ **Clone the repository:**
    ```sh
    git clone https://github.com/yourusername/spring-boot-ecommerce.git
-   cd spring-boot-ecommerce
+   cd spring-boot-e-commerce
    ```
 2️⃣ **Configure the database in `application.properties`** (for MySQL):
    ```properties
