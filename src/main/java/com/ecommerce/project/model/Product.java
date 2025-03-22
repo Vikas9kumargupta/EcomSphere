@@ -9,8 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.ToString;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
-@NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "products")
 @ToString
@@ -40,8 +42,12 @@ public class Product {
     @JoinColumn(name = "seller_id")
     private User user;
 
-    public Product(){}
+    @OneToMany(mappedBy = "product", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.EAGER)
+    private List<CartItem> products = new ArrayList<>();
 
+    public List<CartItem> getProducts() {return products;}
+    public void setProducts(List<CartItem> products) {this.products = products;}
+    public Product(){}
     public User getUser() { return user; }
     public void setUser(User user) { this.user = user;}
     public Long getProductId() {return productId;}

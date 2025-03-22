@@ -34,30 +34,11 @@ public class CartItem {
     public Cart getCart() {return cart;}
     public void setCart(Cart cart) {this.cart = cart;}
     public Product getProduct() {return product;}
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public double getDiscount() {
-        return discount;
-    }
-
+    public void setProduct(Product product) {this.product = product;}
+    public Integer getQuantity() {return quantity;}
+    public void setQuantity(Integer quantity) {this.quantity = quantity;}
+    public double getDiscount() {return discount;}
     public void setDiscount(double discount) {this.discount = discount;}
-
-    public double getProductPrice() {
-        return productPrice;
-    }
-
-    public void setProductPrice(double productPrice) {
-        this.productPrice = productPrice;
-    }
+    public double getProductPrice() {return productPrice;}
+    public void setProductPrice(double productPrice) {this.productPrice = productPrice;}
 }
