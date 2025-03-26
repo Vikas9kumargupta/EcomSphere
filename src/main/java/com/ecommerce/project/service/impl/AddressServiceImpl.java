@@ -24,7 +24,7 @@ public class AddressServiceImpl implements AddressService {
     private ModelMapper modelMapper;
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     @Override
     public AddressDTO createAddress(AddressDTO addressDTO, User user) {
@@ -76,10 +76,12 @@ public class AddressServiceImpl implements AddressService {
         addressFromDatabase.setBuildingName(addressDTO.getBuildingName());
 
         Address updatedAddress = addressRepository.save(addressFromDatabase);
+
         User user = addressFromDatabase.getUser();
         user.getAddresses().removeIf(address -> address.getAddressId().equals(addressId));
         user.getAddresses().add(updatedAddress);
         userRepository.save(user);
+
         return modelMapper.map(updatedAddress, AddressDTO.class);
     }
 
