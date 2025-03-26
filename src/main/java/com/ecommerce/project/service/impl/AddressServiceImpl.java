@@ -92,7 +92,9 @@ public class AddressServiceImpl implements AddressService {
         User user = addressFromDatabase.getUser();
         user.getAddresses().removeIf(address -> address.getAddressId().equals(addressId));
         userRepository.save(user);
+
         addressRepository.delete(addressFromDatabase);
+
         return "Address deleted successfully with addressId: " + addressId;
     }
 

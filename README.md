@@ -22,7 +22,7 @@ This project is a fully functional **E-Commerce platform** built with **Spring B
 - 🔐 **Spring Security**  
 - 🔑 **JWT (JSON Web Token)**  
 - 🗃️ **Spring Data JPA**  
-- 🐬 **MySQL** *(or H2 for an in-memory database)*  
+- 🐬 **PostgreSQL** 
 - ⚡ **Lombok**  
 - 📦 **Maven**  
 
