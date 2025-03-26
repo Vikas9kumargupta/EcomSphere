@@ -73,7 +73,6 @@ public class ProductController {
         return new ResponseEntity<>(deletedProductDto, HttpStatus.OK);
     }
 
-    //API TO change the image of product
     @PutMapping("/products/{productId}/image")
     public ResponseEntity<ProductDTO> updateProductImage(@PathVariable Long productId,
                                                          @RequestParam("Image")MultipartFile image) throws IOException {

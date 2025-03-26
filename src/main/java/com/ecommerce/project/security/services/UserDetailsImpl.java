@@ -32,7 +32,6 @@ public class UserDetailsImpl implements UserDetails {
     private Collection<? extends GrantedAuthority> authorities;
 
     public Long getId() { return id; }
-
     public String getEmail() {return email;}
 
     public UserDetailsImpl(Long id, String username, String email, String password,
