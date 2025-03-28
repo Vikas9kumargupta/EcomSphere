@@ -18,24 +18,30 @@ public class Address {
     private Long addressId;
 
     @Size(min = 5, message = "Street name must be at-least 5 characters")
+    @NotBlank
     private String street;
 
 
     @Size(min = 5, message = "Building name must be at-least 5 characters")
     @Column(name = "building_name")
+    @NotBlank
     private String buildingName;
 
     @Size(min = 4, message = "City name must be at-least 4 characters")
+    @NotBlank
     private String city;
 
     @Size(min = 2, message = "State name must be at-least 3 characters")
+    @NotBlank
     private String state;
 
     @Size(min = 2, message = "Country name must be at-least 2 characters")
+    @NotBlank
     private String country;
 
     @Size(min = 6, message = "PinCode must be at-least 6 characters")
     @Column(name = "pincode")
+    @NotBlank
     private String pinCode;
 
     @ManyToOne
