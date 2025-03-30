@@ -101,11 +101,6 @@ Ensure you have the following installed before setting up the project:
 
 ---
 
-## 🤝 Contributing
-We welcome contributions! 🎉 Feel free to **fork** this repository and submit **pull requests**. Let’s build something amazing together! 🚀
-
----
-
 ## 📜 License
 This project is licensed under the **MIT License** 📝.
 
