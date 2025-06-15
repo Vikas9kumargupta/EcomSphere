@@ -1,4 +1,4 @@
-# 🌟 Spring Boot E-Commerce Application
+# 🌟 EcomSphere
 
 ## 🚀 Overview
 This project is a fully functional **E-Commerce platform** built with **Spring Boot**. It offers a seamless shopping experience with **user authentication, product management, order processing, and secure payment integration**. Designed with **RESTful API principles**, it supports **role-based access control** for better security and management.
